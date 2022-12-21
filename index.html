@@ -104,30 +104,14 @@
                 </div>
                 <div class="chat-space">
                     <div class="actual-chat">
-                        <div v-for="(item, index) in contacts[activeChat].messages">
-                            <div class="user-message">
+                        <div v-for="(item, index) in contacts[activeChat].messages" class="chat-first-container" :class="(contacts[activeChat].messages[index].status == 'received') ? 'flex-start' : 'flex-end'">
+                            <div :class="(contacts[activeChat].messages[index].status == 'received') ? 'interlocutor-message' : 'user-message'">
                                 <div class="user-text">
-                                    pino
+                                    {{ mex(index, activeChat) }}
                                 </div>
                                 <div class="message-details">
-                                    12.40
+                                    {{ hour(index, activeChat) }}
                                 </div>
-                            </div>
-                        </div>
-                        <div class="user-message">
-                            <div class="user-text">
-                                ci sei stasera per andare a pescare sulla luna
-                            </div>
-                            <div class="message-details">
-                                12.40
-                            </div>
-                        </div>
-                        <div class="interlocutor-message">
-                            <div class="interlocutor-text">
-                                no ho fissato al bowling con E.T.
-                            </div>
-                            <div class="message-details">
-                                12.50
                             </div>
                         </div>
                     </div>

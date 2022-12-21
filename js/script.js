@@ -23,11 +23,6 @@ createApp({
                 status: 'sent'
                 },
                 {
-                    date: '10/01/2020 15:50:00',
-                    message: 'Ricordati di stendere i panni',
-                    status: 'sent'
-                    },
-                {
                 date: '10/01/2020 16:15:22',
                 message: 'Tutto fatto!',
                 status: 'received'
@@ -198,5 +193,19 @@ createApp({
      {
          this.activeChat = index
      },
+     mex(number, active) {
+        const mex = this.contacts[active].messages[number].message
+        return mex
+     },
+     hour(number, active) {
+        let hour = this.contacts[active].messages[number].date
+        hour = hour.split(' ')
+        hour = hour[1]
+        return hour
+     },
+     mexStat(number, active) {
+        const stat = this.contacts[active].messages[number].status
+        return stat
+     }
     }
 }).mount('#app')

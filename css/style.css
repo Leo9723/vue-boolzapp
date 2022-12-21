@@ -275,6 +275,23 @@ i {
     margin-left: 10px;
 }
 
+.chat-first-container {
+    display: flex;
+
+}
+
+.flex-end {
+align-self: end;
+width: 50%;
+}
+.flex-start {
+    align-self: start;
+    width: 50%;
+}
+
+.user-message, .interlocutor-message {
+width: 100%;
+}
 
 
 
