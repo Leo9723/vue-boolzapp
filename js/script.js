@@ -169,5 +169,11 @@ createApp({
                 }
             ]
         }
+    },
+    methods: {
+     userImg(number) {
+        const img = `./img/avatar${this.contacts[number].avatar}.jpg`
+        return img
+     }   
     }
 }).mount('#app')

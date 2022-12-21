@@ -57,6 +57,11 @@ body {
     height: calc(100% - 110px);
 }
 
+.chat-container {
+    overflow-y: auto;
+    width: calc(100% - 10px);
+}
+
 .chat {
     width: calc(100% - 10px);
     height: 50px;

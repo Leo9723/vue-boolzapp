@@ -50,22 +50,24 @@
                     <input type="text" name="" id="" placeholder="inizia chat">
                 </div>
                 <div class="chats">
-                    <div class="chat">
-                        <div class="chat-prevew">
-                            <div class="chat-img">
-                                <img src="./img/avatar_1.jpg" alt="">
-                            </div>
-                            <div class="chat-info-prevew">
-                                <div class="chat-name">
-                                    Marco
+                    <div class="chat-container">
+                        <div class="chat"  v-for="(user, index) in contacts">
+                            <div class="chat-prevew">
+                                <div class="chat-img">
+                                    <img :src="userImg(index)" alt="">
                                 </div>
-                                <div class="chat-text">
-                                    No percheeee
+                                <div class="chat-info-prevew">
+                                    <div class="chat-name">
+                                        {{ contacts[index].name }}
+                                    </div>
+                                    <div class="chat-text">
+                                        No percheeee
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="chat-prevew-time">
-                            12.50
+                            <div class="chat-prevew-time">
+                                12.50
+                            </div>
                         </div>
                     </div>
                     <div class="scrollbar">
