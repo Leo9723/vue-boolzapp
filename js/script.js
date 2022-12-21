@@ -9,6 +9,7 @@ createApp({
             newmex: '',
             search: '',
             flag: '',
+            newchat: [],
             contacts: [
                 {
                 name: 'Michele',
@@ -174,7 +175,7 @@ createApp({
             ]
         }
     },
-    computed: {
+     computed: {
         searched() {
             let filterlist;
             if (this.search != '') {
@@ -185,7 +186,6 @@ createApp({
             else {
                 filterlist = this.contacts
             }
-            console.log(this.search)
             return filterlist      
         }
     },
@@ -247,7 +247,7 @@ createApp({
         }, 1000);  
     },
     addflag(active, number){
-        this.contacts[active].messages[number].flag;
+        let controlFlag = this.contacts[active].messages[number].flag
         if(this.contacts[active].messages[number].flag == false) {
             this.contacts[active].messages[number].flag = true
         }
@@ -256,7 +256,8 @@ createApp({
         }
     },
     remove(number, active){
-        this.contacts[active].messages.splice(number, 1);
-    }
+        let gogo = this.contacts[active].messages.splice(number , 1);
+    },
+
     }
 }).mount('#app')

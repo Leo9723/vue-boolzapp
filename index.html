@@ -47,7 +47,7 @@
                     </div>
                 </div>
                 <div class="search">
-                    <input type="text" name="" id="" placeholder="inizia chat" v-model="search">
+                    <input type="text" name="" id="" placeholder="inizia chat" v-model="search" @keyup="searched">
                 </div>
                 <div class="chats">
                     <div class="chat-container">
@@ -58,7 +58,7 @@
                                 </div>
                                 <div class="chat-info-prevew">
                                     <div class="chat-name">
-                                        {{ contacts[index].name }}
+                                        {{ searched[index].name }}
                                     </div>
                                     <div class="chat-text">
                                         {{ lastMessage(index) }}
