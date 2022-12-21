@@ -18,4 +18,74 @@ body {
     background-color: white;
     position: relative;
     top: 30px;
+    display: flex;
+}
+
+.chats-container {
+    width: 35%;
+    background-color: violet;
+}
+
+.on-chat {
+    width: 75%;
+    background-color: aqua;
+}
+
+.user-container {
+    height: 40px;
+    background-color: red;
+}
+
+.shut-up-container {
+    height: 50px;
+    background-color: skyblue;
+}
+
+.search {
+    height: 20px;
+    background-color: blue;
+}
+
+.chats {
+    display: flex;
+    height: calc(100% - 110px);
+}
+
+.chat {
+    width: 80%;
+    height: 50px;
+    background-color: burlywood;
+}
+
+.scrollbar {
+    width: 20%;
+    height: 100%;
+    background-color: blueviolet;
+}
+
+.actual-chat-indicator {
+    height: 40px;
+    background-color: chartreuse;
+}
+
+.chat-space {
+    height: calc(100% - 90px);
+    display: flex;
+}
+
+.actual-chat {
+    width: 90%;
+    height: 100%;
+    background-color: darkolivegreen;
+}
+
+.chat-scrollbar {
+    width: 10%;
+    height: 100%;
+    background-color: firebrick;
+}
+
+.text {
+    height: 50px;
+    background-color: coral;
 }
