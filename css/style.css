@@ -309,10 +309,12 @@ width: 100%;
 
 .inner-mex {
     height: 30px;
-    border: 1px solid gray;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+.inner-mex:first-child {
+    border-bottom: 1px solid gray;
 }
 
 .user-message .banner {
@@ -325,6 +327,10 @@ width: 100%;
 
 .chat, .su-description-2, i, .username, .v {
     cursor: pointer;
+}
+
+.banner {
+    border-radius: 5px;
 }
 
 
