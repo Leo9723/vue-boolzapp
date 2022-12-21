@@ -54,7 +54,7 @@ body {
 
 .chats {
     display: flex;
-    height: calc(100% - 110px);
+    height: calc(100% - 120px);
 }
 
 .chat-container {
@@ -175,7 +175,7 @@ width: 50%;
 }
 
 .user-message, .interlocutor-message {
-    padding: 20px;
+    padding: 10px;
     margin: 10px;
     border-radius: 10px;
     width: 50%;
@@ -264,7 +264,7 @@ i {
 
 .chat-text {
     color: gray;
-    font-size: small;
+    font-size: xx-small;
 }
 
 .chat-info-prevew {
@@ -294,5 +294,37 @@ width: 50%;
 width: 100%;
 }
 
+.v {
+    margin-bottom: 10px;
+    text-align: right;
+}
+
+.banner {
+    height: 60px;
+    width: 100px;
+    background-color: white;
+    position: absolute;
+    border: 1px solid gray;
+}
+
+.inner-mex {
+    height: 30px;
+    border: 1px solid gray;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.user-message .banner {
+    right: 30px;
+}
+
+.interlocutor-message .banner {
+    right: 330px;
+}
+
+.chat, .su-description-2, i, .username, .v {
+    cursor: pointer;
+}
 
 

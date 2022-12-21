@@ -47,11 +47,11 @@
                     </div>
                 </div>
                 <div class="search">
-                    <input type="text" name="" id="" placeholder="inizia chat">
+                    <input type="text" name="" id="" placeholder="inizia chat" v-model="search">
                 </div>
                 <div class="chats">
                     <div class="chat-container">
-                        <div class="chat"  v-for="(user, index) in contacts" @click="changeChat(index)">
+                        <div class="chat"  v-for="(user, index) in searched" @click="changeChat(index)">
                             <div class="chat-prevew">
                                 <div class="chat-img">
                                     <img :src="userImg(index)" alt="">
@@ -84,10 +84,10 @@
                 <div class="actual-chat-indicator">
                     <div class="interlocutor-info">
                         <div class="interlocutor-img">
-                            <img src="./img/avatar_1.jpg" alt="">
+                            <img :src="userImg(activeChat)" alt="">
                         </div>
                         <div class="interlocutor-name">
-                            Marco
+                            {{ contacts[activeChat].name }}
                         </div>
                     </div>
                     <div class="actual-chat-icons">
@@ -110,7 +110,17 @@
                                     {{ mex(index, activeChat) }}
                                 </div>
                                 <div class="message-details">
-                                    {{ hour(index, activeChat) }}
+                                    <div class="v" @click="addflag(activeChat, index)">
+                                        <i class="fa-solid fa-chevron-down"></i>
+                                        <div class="banner" v-if="contacts[activeChat].messages[index].flag == false">
+                                            <div class="inner-mex" @click="remove(index, activeChat)">Elimina messaggio</div>
+                                            <div class="inner-mex">info messaggio</div>
+                                        </div>
+                                        <div v-else></div>
+                                    </div>
+                                    <div>
+                                        {{ hour(index, activeChat) }}
+                                    </div>
                                 </div>
                             </div>
                         </div>

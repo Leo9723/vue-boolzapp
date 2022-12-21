@@ -7,6 +7,8 @@ createApp({
         return {
             activeChat: 0,
             newmex: '',
+            search: '',
+            flag: '',
             contacts: [
                 {
                 name: 'Michele',
@@ -172,6 +174,21 @@ createApp({
             ]
         }
     },
+    computed: {
+        searched() {
+            let filterlist;
+            if (this.search != '') {
+                filterlist = this.contacts.filter((elem) => {
+                    return elem.name.toLowerCase().includes(this.search.toLowerCase())
+                })
+            }
+            else {
+                filterlist = this.contacts
+            }
+            console.log(this.search)
+            return filterlist      
+        }
+    },
     methods: {
      userImg(number) {
         const img = `./img/avatar${this.contacts[number].avatar}.jpg`
@@ -188,6 +205,8 @@ createApp({
         let last = this.contacts[number].messages[io - 1].date
         last = last.split(' ')
         last = last[1]
+        last = last.split(':')
+        last = last[0] + ':' + last[1]
         return last
      },
      changeChat(index)
@@ -202,6 +221,8 @@ createApp({
         let hour = this.contacts[active].messages[number].date
         hour = hour.split(' ')
         hour = hour[1]
+        hour = hour.split(':')
+        hour = hour[0] + ':' + hour[1]
         return hour
      },
      mexStat(number, active) {
@@ -224,7 +245,18 @@ createApp({
                 }
                 this.contacts[active].messages.push(newmexreceived)
         }, 1000);  
-
+    },
+    addflag(active, number){
+        this.contacts[active].messages[number].flag;
+        if(this.contacts[active].messages[number].flag == false) {
+            this.contacts[active].messages[number].flag = true
+        }
+        else {
+            this.contacts[active].messages[number].flag = false
+        }
+    },
+    remove(number, active){
+        this.contacts[active].messages.splice(number, 1);
     }
     }
 }).mount('#app')
