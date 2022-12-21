@@ -6,6 +6,7 @@ createApp({
     data() {
         return {
             activeChat: 0,
+            newmex: '',
             contacts: [
                 {
                 name: 'Michele',
@@ -206,6 +207,24 @@ createApp({
      mexStat(number, active) {
         const stat = this.contacts[active].messages[number].status
         return stat
-     }
+     },
+     addmex(newmessage, active){
+        newmexarray = {
+            date: '10/01/2020 15:50:00',
+            message: newmessage,
+            status: 'sent'
+            },
+        this.contacts[active].messages.push(newmexarray)
+        this.newmex = ''
+        this.newmexarray = setTimeout(() => {
+            newmexreceived = {
+                date: '10/01/2020 15:50:00',
+                message: 'ok',
+                status: 'received'
+                }
+                this.contacts[active].messages.push(newmexreceived)
+        }, 1000);  
+
+    }
     }
 }).mount('#app')

@@ -129,7 +129,7 @@
                         <i class="fa-regular fa-face-smile"></i>
                     </div>
                     <div class="insert-text">
-                        <input type="text" name="" id="" placeholder="inserisci messaggio">
+                        <input type="text" name="" id="" placeholder="inserisci messaggio" v-model="newmex" @keyup.enter="(!newmex == '') ? addmex(newmex, activeChat) : null">
                     </div>
                     <div class="vocal">
                         <i class="fa-solid fa-microphone"></i>
