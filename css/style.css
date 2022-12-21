@@ -8,7 +8,7 @@ body {
 .container {
     width: 100%;
     height: 100%;
-    background: linear-gradient(to bottom, green 20%, gray 20% 100%);
+    background: linear-gradient(to bottom, #009688 20%, #dadbd3 20% 100%);
 }
 
 .app-container {
@@ -23,29 +23,33 @@ body {
 
 .chats-container {
     width: 35%;
-    background-color: violet;
 }
 
 .on-chat {
     width: 75%;
-    background-color: aqua;
 }
 
 .user-container {
     height: 40px;
-    background-color: red;
+    background-color: #eaeaea;
     display: flex;
     justify-content: space-between;
 }
 
 .shut-up-container {
     height: 50px;
-    background-color: skyblue;
+    background-color: #8edafc;
+    border-bottom: 1px solid gray;
+    padding-top: 10px;
 }
 
 .search {
     height: 20px;
-    background-color: blue;
+    background-color: #ffffff;
+    border-bottom: 1px solid gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .chats {
@@ -56,18 +60,18 @@ body {
 .chat {
     width: calc(100% - 10px);
     height: 50px;
-    background-color: burlywood;
+    border-bottom: 1px solid gray;
 }
 
 .scrollbar {
     width: 10px;
-    height: 100%;
-    background-color: blueviolet;
+    height: calc(100% - 11px);
+    background-color: #f1f1f1;
 }
 
 .actual-chat-indicator {
     height: 40px;
-    background-color: chartreuse;
+    background-color: #eaeaea;
 }
 
 .chat-space {
@@ -78,18 +82,17 @@ body {
 .actual-chat {
     width: calc(100% - 10px);
     height: 100%;
-    background-color: darkolivegreen;
+    background-image: url(../img/mine.jpg);
 }
 
 .chat-scrollbar {
     width: 10px;
     height: 100%;
-    background-color: firebrick;
+    background-color: #f1f1f1;
 }
 
 .text {
     height: 50px;
-    background-color: coral;
 }
 
 .user-info, .user-icons, .shut-up-container, .chat, .chat-prevew, .actual-chat-indicator, .actual-chat-icons, .interlocutor-info, .scrollbar, .chat-scrollbar {
@@ -103,7 +106,6 @@ body {
 .user-img, .interlocutor-img {
     width: 35px;
     height: 35px;
-    background-color: yellow;
 }
 
 .user-img img, .interlocutor-img img {
@@ -114,19 +116,18 @@ body {
 .user-icon, .actual-chat-icon {
     width: 40px;
     height: 40px;
-    background-color: burlywood;
-    border: 1px solid black;
 }
 
 .shut-up-icon {
     height: 40px;
     width: 40px;
-    background-color: bisque;
+    background-color: #f2fbff;
     border-radius: 100%;
+    margin-left: 10px;
 }
 
 .search input {
-    width: 100%;
+    width: 95%;
     height: 50%;
 }
 
@@ -149,7 +150,6 @@ body {
 .scroll-icon {
     width: 10px;
     height: 10px;
-    background-color: darkslategray;
 }
 
 .actual-chat {
@@ -159,12 +159,12 @@ body {
 
 .user-message {
  align-self: end;
- background-color: rgb(147, 210, 147);
+ background-color: #d5f9ba;
 }
 
 .interlocutor-message {
 align-self: start;
-background-color: antiquewhite;
+background-color: #ffffff;
 width: 50%;
 }
 
@@ -184,18 +184,17 @@ width: 50%;
 
 .text {
     display: flex;
+    background-color: #f3eeea;
 }
 
 .emoji {
     width: 50px;
     height: 50px;
-    background-color: yellow;
 }
 
 .vocal {
     width: 50px;
     height: 50px;
-    background-color: darkgrey;
 }
 
 .insert-text {
@@ -209,6 +208,67 @@ width: 50%;
     width: 100%;
 }
 
+.user-icon, .shut-up-icon, .actual-chat-icon, .emoji, .vocal, .scroll-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.scroll-icon i {
+    scale: 0.5;
+}
+
+i {
+    color: #b1b1b1;
+}
+
+.shut-up-container i {
+    color: #8cd8fb;
+}
+
+.su-description-2 {
+    text-decoration: underline;
+}
+
+.shut-up-description {
+    margin-left: 10px;
+    font-size: small;
+    margin-top: 5px;
+}
+
+.username {
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.interlocutor-name {
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.chat-prevew-time {
+    line-height: 40px;
+    margin-right: 10px;
+    font-size: x-small;
+}
+
+.chat-name {
+    font-weight: bold;
+}
+
+.chat-text {
+    color: gray;
+    font-size: small;
+}
+
+.chat-info-prevew {
+    margin-left: 10px;
+    margin-top: 5px;
+}
+
+.chat-img, .user-img, .interlocutor-img {
+    margin-left: 10px;
+}
 
 
 
