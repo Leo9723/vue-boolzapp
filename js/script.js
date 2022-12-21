@@ -180,6 +180,13 @@ createApp({
         const io = this.contacts[number].messages.length
         const last = this.contacts[number].messages[io - 1].message
         return last
+     },
+     lastHour(number) {
+        const io = this.contacts[number].messages.length
+        let last = this.contacts[number].messages[io - 1].date
+        last = last.split(' ')
+        last = last[1]
+        return last
      }
     }
 }).mount('#app')
