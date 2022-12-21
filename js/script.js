@@ -174,6 +174,12 @@ createApp({
      userImg(number) {
         const img = `./img/avatar${this.contacts[number].avatar}.jpg`
         return img
-     }   
+     },
+     
+     lastMessage(number) {
+        const io = this.contacts[number].messages.length
+        const last = this.contacts[number].messages[io - 1].message
+        return last
+     }
     }
 }).mount('#app')
