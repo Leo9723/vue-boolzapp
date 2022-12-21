@@ -51,7 +51,7 @@
                 </div>
                 <div class="chats">
                     <div class="chat-container">
-                        <div class="chat"  v-for="(user, index) in contacts">
+                        <div class="chat"  v-for="(user, index) in contacts" @click="changeChat(index)">
                             <div class="chat-prevew">
                                 <div class="chat-img">
                                     <img :src="userImg(index)" alt="">
@@ -104,6 +104,16 @@
                 </div>
                 <div class="chat-space">
                     <div class="actual-chat">
+                        <div v-for="(item, index) in contacts[activeChat].messages">
+                            <div class="user-message">
+                                <div class="user-text">
+                                    pino
+                                </div>
+                                <div class="message-details">
+                                    12.40
+                                </div>
+                            </div>
+                        </div>
                         <div class="user-message">
                             <div class="user-text">
                                 ci sei stasera per andare a pescare sulla luna

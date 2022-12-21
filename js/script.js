@@ -5,6 +5,7 @@ const {
 createApp({
     data() {
         return {
+            activeChat: 0,
             contacts: [
                 {
                 name: 'Michele',
@@ -21,6 +22,11 @@ createApp({
                 message: 'Ricordati di stendere i panni',
                 status: 'sent'
                 },
+                {
+                    date: '10/01/2020 15:50:00',
+                    message: 'Ricordati di stendere i panni',
+                    status: 'sent'
+                    },
                 {
                 date: '10/01/2020 16:15:22',
                 message: 'Tutto fatto!',
@@ -187,6 +193,10 @@ createApp({
         last = last.split(' ')
         last = last[1]
         return last
-     }
+     },
+     changeChat(index)
+     {
+         this.activeChat = index
+     },
     }
 }).mount('#app')
