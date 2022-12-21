@@ -34,6 +34,8 @@ body {
 .user-container {
     height: 40px;
     background-color: red;
+    display: flex;
+    justify-content: space-between;
 }
 
 .shut-up-container {
@@ -52,13 +54,13 @@ body {
 }
 
 .chat {
-    width: 80%;
+    width: calc(100% - 10px);
     height: 50px;
     background-color: burlywood;
 }
 
 .scrollbar {
-    width: 20%;
+    width: 10px;
     height: 100%;
     background-color: blueviolet;
 }
@@ -74,13 +76,13 @@ body {
 }
 
 .actual-chat {
-    width: 90%;
+    width: calc(100% - 10px);
     height: 100%;
     background-color: darkolivegreen;
 }
 
 .chat-scrollbar {
-    width: 10%;
+    width: 10px;
     height: 100%;
     background-color: firebrick;
 }
@@ -89,3 +91,125 @@ body {
     height: 50px;
     background-color: coral;
 }
+
+.user-info, .user-icons, .shut-up-container, .chat, .chat-prevew, .actual-chat-indicator, .actual-chat-icons, .interlocutor-info, .scrollbar, .chat-scrollbar {
+    display: flex;
+}
+
+.chat, .actual-chat-indicator {
+    justify-content: space-between;
+}
+
+.user-img, .interlocutor-img {
+    width: 35px;
+    height: 35px;
+    background-color: yellow;
+}
+
+.user-img img, .interlocutor-img img {
+    width: 100%;
+    border-radius: 100%;
+}
+
+.user-icon, .actual-chat-icon {
+    width: 40px;
+    height: 40px;
+    background-color: burlywood;
+    border: 1px solid black;
+}
+
+.shut-up-icon {
+    height: 40px;
+    width: 40px;
+    background-color: bisque;
+    border-radius: 100%;
+}
+
+.search input {
+    width: 100%;
+    height: 50%;
+}
+
+.chat-img {
+    height: 45px;
+    width: 45px;
+}
+
+.chat-img img {
+    height: 100%;
+    width: 100%;
+    border-radius: 100%;
+}
+
+.scrollbar, .chat-scrollbar {
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.scroll-icon {
+    width: 10px;
+    height: 10px;
+    background-color: darkslategray;
+}
+
+.actual-chat {
+    display: flex;
+    flex-direction: column;
+}
+
+.user-message {
+ align-self: end;
+ background-color: rgb(147, 210, 147);
+}
+
+.interlocutor-message {
+align-self: start;
+background-color: antiquewhite;
+width: 50%;
+}
+
+.user-message, .interlocutor-message {
+    padding: 20px;
+    margin: 10px;
+    border-radius: 10px;
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.message-details {
+    align-self: end;
+    font-size: x-small;
+}
+
+.text {
+    display: flex;
+}
+
+.emoji {
+    width: 50px;
+    height: 50px;
+    background-color: yellow;
+}
+
+.vocal {
+    width: 50px;
+    height: 50px;
+    background-color: darkgrey;
+}
+
+.insert-text {
+    width: calc(100% - 100px);
+    height: 50px;
+    display: flex;
+    align-items: center;
+}
+
+.insert-text input {
+    width: 100%;
+}
+
+
+
+
+
