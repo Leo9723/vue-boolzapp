@@ -10,6 +10,7 @@ createApp({
             newmex: '',
             search: '',
             flag: '',
+            bing: '',
             newchat: [],
             user: [
                 {
@@ -183,7 +184,7 @@ createApp({
         }
     },
      computed: {
-        searched() {
+        searchContact() {
             let filterlist;
             if (this.search != '') {
                 filterlist = this.contacts.filter((elem) => {
@@ -230,6 +231,7 @@ createApp({
         return stat
      },
      addmex(newmessage, active){
+        
         newmexarray = {
             date: '10/01/2020 15:50:00',
             message: newmessage,
@@ -264,7 +266,6 @@ createApp({
         else {
             this.contacts[active].messages[number].flag = false
         }
-    },
-
+    }
     }
 }).mount('#app')

@@ -48,35 +48,27 @@
                     </div>
                 </div>
                 <div class="search">
-                    <input type="text" name="" id="" placeholder="inizia chat" v-model="search" @keyup="searched">
+                    <input type="text" name="" id="" placeholder="inizia chat" v-model="search">
                 </div>
                 <div class="chats">
                     <div class="chat-container">
-                        <div class="chat"  v-for="(user, index) in searched" @click="changeChat(index)" :class="(activeChat == index) ? 'gray-bkg' : ''">
+                        <div class="chat"  v-for="(user, index) in searchContact" @click="changeChat(index)" :class="(activeChat == index) ? 'gray-bkg' : ''">
                             <div class="chat-prevew">
                                 <div class="chat-img">
-                                    <img :src="`img/avatar${searched[index].avatar}.jpg`" alt="">
+                                    <img :src="`img/avatar${searchContact[index].avatar}.jpg`" alt="">
                                 </div>
                                 <div class="chat-info-prevew">
                                     <div class="chat-name">
-                                        {{ searched[index].name }}
+                                        {{ searchContact[index].name }}
                                     </div>
                                     <div class="chat-text">
-                                        {{ searched[index].messages[searched[index].messages.length - 1].message }}
+                                        {{ searchContact[index].messages[searchContact[index].messages.length - 1].message }}
                                     </div>
                                 </div>
                             </div>
                             <div class="chat-prevew-time">
-                                {{ lastHour(searched[index].messages[searched[index].messages.length - 1].date) }}
+                                {{ lastHour(searchContact[index].messages[searchContact[index].messages.length - 1].date) }}
                             </div>
-                        </div>
-                    </div>
-                    <div class="scrollbar">
-                        <div class="scroll-icon">
-                            <i class="fa-solid fa-chevron-up"></i>
-                        </div>
-                        <div class="scroll-icon">
-                            <i class="fa-solid fa-chevron-down"></i>
                         </div>
                     </div>
                 </div>
@@ -84,6 +76,9 @@
             <div class="on-chat">
                 <div class="actual-chat-indicator">
                     <div class="interlocutor-info">
+                        <div class="tobe">
+                            V
+                        </div>
                         <div class="interlocutor-img">
                             <img :src="userImg(activeChat)" alt="">
                         </div>
@@ -127,14 +122,6 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="chat-scrollbar">
-                        <div class="scroll-icon">
-                            <i class="fa-solid fa-chevron-up"></i>
-                        </div>
-                        <div class="scroll-icon">
-                            <i class="fa-solid fa-chevron-down"></i>
                         </div>
                     </div>
                 </div>
