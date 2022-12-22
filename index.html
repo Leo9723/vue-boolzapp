@@ -15,10 +15,10 @@
                 <div class="user-container">
                     <div class="user-info">
                         <div class="user-img">
-                            <img src="./img/avatar_io.jpg" alt="">
+                            <img :src="user[0].useravatar" alt="">
                         </div>
                         <div class="username">
-                            Jhon Doe
+                            {{ user[0].username }}
                         </div>
                     </div>
                     <div class="user-icons">
@@ -54,19 +54,19 @@
                         <div class="chat"  v-for="(user, index) in searched" @click="changeChat(index)">
                             <div class="chat-prevew">
                                 <div class="chat-img">
-                                    <img :src="userImg(index)" alt="">
+                                    <img :src="`img/avatar${searched[index].avatar}.jpg`" alt="">
                                 </div>
                                 <div class="chat-info-prevew">
                                     <div class="chat-name">
                                         {{ searched[index].name }}
                                     </div>
                                     <div class="chat-text">
-                                        {{ lastMessage(index) }}
+                                        {{ searched[index].messages[searched[index].messages.length - 1].message }}
                                     </div>
                                 </div>
                             </div>
                             <div class="chat-prevew-time">
-                                {{ lastHour(index) }}
+                                {{ lastHour(searched[index].messages[searched[index].messages.length - 1].date) }}
                             </div>
                         </div>
                     </div>

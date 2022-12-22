@@ -10,6 +10,12 @@ createApp({
             search: '',
             flag: '',
             newchat: [],
+            user: [
+                {
+                    username: 'nome utente',
+                    useravatar: './img/avatar_io.jpg'
+                }
+            ],
             contacts: [
                 {
                 name: 'Michele',
@@ -194,16 +200,9 @@ createApp({
         const img = `./img/avatar${this.contacts[number].avatar}.jpg`
         return img
      },
-     
-     lastMessage(number) {
-        const io = this.contacts[number].messages.length
-        const last = this.contacts[number].messages[io - 1].message
-        return last
-     },
      lastHour(number) {
-        const io = this.contacts[number].messages.length
-        let last = this.contacts[number].messages[io - 1].date
-        last = last.split(' ')
+
+        last = number.split(' ')
         last = last[1]
         last = last.split(':')
         last = last[0] + ':' + last[1]
@@ -256,7 +255,14 @@ createApp({
         }
     },
     remove(number, active){
-        let gogo = this.contacts[active].messages.splice(number , 1);
+        let deleteElement = this.contacts[active].messages.splice(number , 1);
+        let controlFlag = this.contacts[active].messages[number].flag
+        if(this.contacts[active].messages[number].flag == false) {
+            this.contacts[active].messages[number].flag = true
+        }
+        else {
+            this.contacts[active].messages[number].flag = false
+        }
     },
 
     }
