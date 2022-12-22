@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/luxon/3.1.1/luxon.min.js" integrity="sha512-hZKz8wkgOcWeZanRioE6H6AC3OJspzJQyDBB5jLoZ1jIKbYDt5MwVIvU703WwE4sjvKZw9uNmmYlt29xKS27RA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <link rel="stylesheet" href="./css/style.css">
     <title>Document</title>
 </head>
@@ -39,10 +40,10 @@
                     </div>
                     <div class="shut-up-description">
                         <div class="su-description-1">
-                            ricevi notifiche 
+                            Ricevi notifiche di nuovi messaggi
                         </div>
                         <div class="su-description-2">
-                            ricevi notifiche desktop
+                            Attiva notifiche desktop
                         </div>
                     </div>
                 </div>
@@ -51,7 +52,7 @@
                 </div>
                 <div class="chats">
                     <div class="chat-container">
-                        <div class="chat"  v-for="(user, index) in searched" @click="changeChat(index)">
+                        <div class="chat"  v-for="(user, index) in searched" @click="changeChat(index)" :class="(activeChat == index) ? 'gray-bkg' : ''">
                             <div class="chat-prevew">
                                 <div class="chat-img">
                                     <img :src="`img/avatar${searched[index].avatar}.jpg`" alt="">
@@ -88,6 +89,9 @@
                         </div>
                         <div class="interlocutor-name">
                             {{ contacts[activeChat].name }}
+                            <div class="access">
+                                Ultimo accesso alle {{ lastHour(contacts[activeChat].messages[contacts[activeChat].messages.length - 1].date) }}
+                            </div>
                         </div>
                     </div>
                     <div class="actual-chat-icons">

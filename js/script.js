@@ -5,6 +5,7 @@ const {
 createApp({
     data() {
         return {
+            d: new Date(),
             activeChat: 0,
             newmex: '',
             search: '',
