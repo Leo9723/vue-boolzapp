@@ -80,12 +80,12 @@
                             V
                         </div>
                         <div class="interlocutor-img">
-                            <img :src="userImg(activeChat)" alt="">
+                            <img :src="`img/avatar${searchContact[activeChat].avatar}.jpg`" alt="">
                         </div>
                         <div class="interlocutor-name">
-                            {{ contacts[activeChat].name }}
+                            {{ searchContact[activeChat].name }}
                             <div class="access">
-                                Ultimo accesso alle {{ lastHour(contacts[activeChat].messages[contacts[activeChat].messages.length - 1].date) }}
+                                Ultimo accesso alle {{ lastHour(searchContact[activeChat].messages[searchContact[activeChat].messages.length - 1].date) }}
                             </div>
                         </div>
                     </div>
@@ -103,22 +103,22 @@
                 </div>
                 <div class="chat-space">
                     <div class="actual-chat">
-                        <div v-for="(item, index) in contacts[activeChat].messages" class="chat-first-container" :class="(contacts[activeChat].messages[index].status == 'received') ? 'flex-start' : 'flex-end'">
-                            <div :class="(contacts[activeChat].messages[index].status == 'received') ? 'interlocutor-message' : 'user-message'">
+                        <div v-for="(item, index) in searchContact[activeChat].messages" class="chat-first-container" :class="(searchContact[activeChat].messages[index].status == 'received') ? 'flex-start' : 'flex-end'">
+                            <div :class="(searchContact[activeChat].messages[index].status == 'received') ? 'interlocutor-message' : 'user-message'">
                                 <div class="user-text">
-                                    {{ mex(index, activeChat) }}
+                                    {{ searchContact[activeChat].messages[index].message }}
                                 </div>
                                 <div class="message-details">
                                     <div class="v" @click="addflag(activeChat, index)">
                                         <i class="fa-solid fa-chevron-down"></i>
-                                        <div class="banner" v-if="contacts[activeChat].messages[index].flag == false">
+                                        <div class="banner" v-if="searchContact[activeChat].messages[index].flag == false">
                                             <div class="inner-mex" @click="remove(index, activeChat)">Elimina messaggio</div>
                                             <div class="inner-mex">info messaggio</div>
                                         </div>
                                         <div v-else></div>
                                     </div>
                                     <div>
-                                        {{ hour(index, activeChat) }}
+                                        {{ hour(searchContact[activeChat].messages[index].date) }}
                                     </div>
                                 </div>
                             </div>

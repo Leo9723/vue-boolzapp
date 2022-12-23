@@ -1,7 +1,6 @@
 const {
     createApp
 } = Vue;
-
 createApp({
     data() {
         return {
@@ -12,6 +11,7 @@ createApp({
             flag: '',
             bing: '',
             newchat: [],
+            dt: luxon.dayTime,
             user: [
                 {
                     username: 'nome utente',
@@ -218,8 +218,7 @@ createApp({
         const mex = this.contacts[active].messages[number].message
         return mex
      },
-     hour(number, active) {
-        let hour = this.contacts[active].messages[number].date
+     hour(hour) {
         hour = hour.split(' ')
         hour = hour[1]
         hour = hour.split(':')
@@ -231,7 +230,8 @@ createApp({
         return stat
      },
      addmex(newmessage, active){
-        
+        let date = dt.now().setLocale('it').toLocaleString(DateTime.TIME_24_SIMPLE)
+        console.log(date)
         newmexarray = {
             date: '10/01/2020 15:50:00',
             message: newmessage,
